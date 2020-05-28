@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Linkin Park | Store</title>
+    <meta name="description" content="This is the description">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="script\02.js"></script>
+    <script type="text/javascript" src="script\my_ajax.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <!-- TODO : find a suitable background -->
+        <nav class="nav main-nav">
+            <ul>
+                <li>
+                    <a href="index.html">ORDER</a>
+                </li>
+                <li>
+                    <a href="store.html">STORE</a>
+                </li>
+                <li>
+                    <a href="about.html">ABOUT</a>
+                </li>
+                <li>
+                    <a href="cart.html">CART</a>
+                </li>
+
+            </ul>
+        </nav>
+        <h1 class="band-name band-name-large">Lyrics Shop</h1>
+    </header>
+    <section class="container">
+        <h2 class="title-section">MUSIC</h2>
+        <div class="shop-items" id="song_section">
+
+        </div>
+    </section>
+<!-- 
+    <section class="container">
+        <h2 class="title-section">MERCH</h2>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title">T-Shirt</span>
+                <div class="shop-item-image">
+                    <img src="Images/tshirt.jpg" width="200">
+                </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">EUR 6,99</span>
+                    <button class="btn btn-primary" type="button">VIEW</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <span class="shop-item-title">Necklace</span>
+                <span class="shop-item-image">
+                    <img src="Images/collier.jpg" width="200">
+                </span>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">EUR 14,20</span>
+                    <button class="btn btn-primary" type="button">VIEW</button>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <div class="card middle nopresent" id="central-detail-card">
+        <div class="top-section">
+            <div class="close" id="close-icon"></div>
+            <img id="song_img" src='Images/album3.jpg'>
+            <div class="menuicon">
+                <span class="s1"></span>
+                <span class="s2"></span>
+            </div>
+            <div class="name" id="song_singer_name">
+                Hello<br>
+                <span id="singer_name">Lionel Richie</span>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>About
+                <div class="border"></div>
+            </h3>
+            <p id="about_song">
+                Hybrid Theory is the debut studio album by American rock band Linkin Park, released on October 24, 2000, through Warner Bros. Records. 
+                Recorded at NRG Recordings in North Hollywood, California, and produced by Don Gilmore, the album's lyrical themes deal with problems lead vocalist Chester Bennington experienced during his adolescence, including drug abuse and the constant fighting and divorce of his parents. 
+                Hybrid Theory takes its title from the previous name of the band as well as the concept of music theory and combining different styles.
+
+            </p>
+            <h3>Do you like it?
+                <label class="price" id="song_price">$ 1.29</label>
+                <div class="border"></div>
+            </h3>
+
+            <div class="s-m">
+                <button class="btn like-primary" type="button" id="like_button">LIKE</button>
+                <button class="btn buy-primary" type="button" id="buy_button">BUY</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <footer class="main-footer">
+        <div class="main-footer-container">
+            <h3 class="band-name">Lyrics Shop</h3>
+            <!-- the attribute target (_blank | _self ) allows us to open the link in a new tab -->
+            <ul class="nav footer-nav">
+        </div>
+    </footer>
+</body>
+
+</html>

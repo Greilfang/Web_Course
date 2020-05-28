@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Linkin Park | Store</title>
+        <meta name="description" content="This is the description">
+        <script type="text/javascript" src="script\03.js"></script>
+        <script type="text/javascript" src="script\my_ajax.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="main-header"> 
+            <!-- TODO : find a suitable background -->
+            <nav class="nav main-nav">
+                <ul>
+                    <li>
+                        <a  href="index.html">ORDER</a>
+                    </li>
+                    <li>
+                        <a href="store.html">STORE</a>
+                    </li>
+                    <li>
+                        <a href="about.html">ABOUT</a>
+                    </li>
+                    <li>
+                        <a href="cart.html">CART</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+            <h1 class="band-name band-name-large">Lyrics Shop</h1>
+        </header>
+        <section class = "container">
+            <h2 class="title-section">CART</h2>
+            <div class = "cart-items" id = "cart_items_head">
+
+                <div class="cart-row">
+                    <span class="cart-column cart-header cart-item ">ITEM</span>
+                    <span class="cart-column cart-header cart-price ">PRICE</span>
+                    <span class="cart-column cart-header cart-quantity ">QUANTITY</span>
+                </div>
+
+
+<!--                <div class="cart-row">-->
+<!--                    <div class="cart-column cart-item">-->
+<!--                        <img class="cart-item-image" src="Images/album2.jpg" width="100">-->
+<!--                        <span class="cart-item-title">Meteora</span>-->
+<!--                    </div>-->
+<!--                    <span class="cart-column cart-price">EUR 9,98</span>-->
+<!--                    <div class="cart-column cart-quantity">-->
+<!--                        <input class="cart-item-quantity" type="number" value="2">-->
+<!--                        <button class ="btn btn-danger" type="button">REMOVE</button>-->
+<!--                    </div>     -->
+<!--                </div>-->
+            </div>
+
+            <div class="cart-total"> 
+                <span class="cart-total-title">Total</span>
+                <span class="cart-total-price" id="cart_total_price"></span>
+            </div>
+            <div>
+                <button  class="btn btn-primary btn-purchase" type="button" id="purchase_button">PURCHASE</button>
+            </div>
+
+        </section>
+        <footer class="main-footer">
+            <div class="main-footer-container">
+                <h3 class="band-name">Lyrics Shop</h3>
+            <!-- the attribute target (_blank | _self ) allows us to open the link in a new tab -->
+            <ul class="nav footer-nav">
+            </div>
+        </footer>
+    </body>    
+</html>

@@ -1,0 +1,113 @@
+/*
+配色方案:
+背景：rgb(224,207,254),rgb(255,239,255)
+按钮：rag(181,154,254),rgb(245,189,253)
+*/
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: miaowu;
+    background: rgb(10, 10, 10) fixed;
+}
+
+.container {
+    position: relative;
+    width: 80rem;
+    height: 50rem;
+}
+
+.container img {
+    width: 80rem;
+    height: 50rem;
+}
+
+.switch span {
+    color: #ccc;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.switch span.active {
+    color: white;
+}
+
+.panel {
+    width: 30%;
+    margin: 13rem 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+}
+
+form .input{
+    position:relative;
+    opacity: 1;
+    height:2rem;
+    width: 100%;
+    margin: 2rem 0 ;
+    transition:.6s;
+}
+
+
+.input input{
+    background-color: transparent;
+    outline: none;
+    width:100%;
+    border:none;
+    height: 70%;
+    border-bottom: 1px solid white;
+    color:white;
+    font-size: 1rem;
+
+}
+.input::after{
+    content:attr(placeholder);
+    position:absolute;
+    left:0;
+    top: -10%;
+    font-size: 1.1rem;
+    color:white;
+    transition: .3s;
+    opacity: 0.3;
+
+}
+.input.focus::after{
+    top:-70%;
+    font-size:0.8rem
+}
+
+.login .input#email,
+.login .input#repeat{
+    margin:0;
+    height:0;
+    opacity:0;
+}
+
+form span{
+    display:block;
+    color:white;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+form button{
+    font-size: 20px;
+    border:none;
+    outline:none;
+    margin: 2rem 0 0;
+    width:100%;
+    height:3.5rem;
+    border-radius:3rem;
+    background: transparent;
+    box-shadow: 0 0 8px rgb(237, 235, 245);
+    cursor: pointer;
+    color:white;
+
+}
