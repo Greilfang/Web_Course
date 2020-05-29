@@ -111,15 +111,6 @@ function load_cart() {
     }
 }
 
-function delete_like(event) {
-    console.log("delete")
-    today_likes = event.target.parentNode.parentNode
-    event.target.parentElement.remove();
-    if (today_likes.getElementsByClassName("task").length == 0) {
-        today_likes.remove()
-    }
-
-}
 
 
 window.onload = function () {

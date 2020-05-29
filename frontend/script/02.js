@@ -1,5 +1,4 @@
 function show_detail(target) {
-    console.log("this:", target)
     let cookie = getCookie('token')
     console.log(cookie)
     if (cookie) {
@@ -75,41 +74,39 @@ function add_to_cart() {
 
 
 
-function initialize_songs(){
-    var xhr=postAjax('initialize',{})
-        console.log(xhr)
-        xhr.onreadystatechange = function(){
-            if(xhr.status === 200 && xhr.readyState===4){
-                var response = JSON.parse(xhr.responseText)
-                console.log(response)
-                if(response['feedback']==="success"){
-                    let song_section=document.getElementById("song_section");
-                    for (let i = 0;i<response['data'].length;i++){
-                        let insertElement = document.createElement("div");
-                        insertElement.className="shop-item";
-                        insertElement.innerHTML=
-                        `<span class="shop-item-title">${response['data'][i]['Name']}</span>`+
-                        `<div class="shop-item-image">`+
-                            `<img src="${response['data'][i]['Image']}" width="200">`+
-                        '</div>'+
-                        `<div class="shop-item-details">`+
-                            `<span class="shop-item-price">$ ${response['data'][i]['Price']}</span>`+
-                            '<button class="btn btn-primary" type="button" onclick="show_detail(this)">VIEW</button>'+
+function initialize_songs() {
+    var xhr = postAjax('initialize', {})
+    console.log(xhr)
+    xhr.onreadystatechange = function () {
+        if (xhr.status === 200 && xhr.readyState === 4) {
+            var response = JSON.parse(xhr.responseText)
+            console.log(response)
+            if (response['feedback'] === "success") {
+                let song_section = document.getElementById("song_section");
+                for (let i = 0; i < response['data'].length; i++) {
+                    let insertElement = document.createElement("div");
+                    insertElement.className = "shop-item";
+                    insertElement.innerHTML =
+                        `<span class="shop-item-title">${response['data'][i]['Name']}</span>` +
+                        `<div class="shop-item-image">` +
+                        `<img src="${response['data'][i]['Image']}" width="200">` +
+                        '</div>' +
+                        `<div class="shop-item-details">` +
+                        `<span class="shop-item-price">$ ${response['data'][i]['Price']}</span>` +
+                        '<button class="btn btn-primary" type="button" onclick="show_detail(this)">VIEW</button>' +
                         '</div>';
 
 
-                        song_section.appendChild(insertElement);
-                        // let btn =song_section.getElementsByClassName("btn btn-primary")[0]
-                        // console.log('btn',btn)
-                        // btn.addEventListener('onclick',show_detail())
-                    }
+                    song_section.appendChild(insertElement);
+                    // let btn =song_section.getElementsByClassName("btn btn-primary")[0]
+                    // console.log('btn',btn)
+                    // btn.addEventListener('onclick',show_detail())
                 }
-                else{
-                    alert("initialize_songs_wrong")
-                    return 
-                }
+            } else {
+                alert("initialize_songs_wrong")
             }
         }
+    }
 
 }
 

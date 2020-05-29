@@ -77,7 +77,11 @@ class AccountHandler:
         self.collection = database['Accounts']
 
     def search_existing_accounts(self, login_info):
-        result = self.collection.find({'_id': ObjectId(login_info['_id'])}, {"_id": 1})
+        print(login_info)
+        if '_id' not in login_info.keys():
+            result = self.collection.find(login_info, {"_id": 1})
+        else:
+            result = self.collection.find({'_id': ObjectId(login_info['_id'])}, {"_id": 1})
         print("search_result:", result[0]["_id"])
         return str(result[0]["_id"])
 
@@ -117,6 +121,16 @@ class OrderHandler:
         order['user_id'] = order['_id']
         del order['_id']
         self.collection.insert_one(order)
+
+    def retrieve_user_orders(self, user_id):
+        result_dict = list()
+        orders = self.collection.find({'user_id': ObjectId(user_id)})
+        print("orders:", orders)
+        for order in orders:
+            order['_id'] = str(order['_id'])
+            order['user_id'] = str(order['user_id'])
+            result_dict.append(order)
+        return result_dict
 
 
 @app.route('/login', methods=['POST'])
@@ -230,6 +244,20 @@ def submit_order():
             order_handler = OrderHandler(database)
             order_handler.insert_order(order)
             return jsonify(code=200, feedback='success')
+
+
+@app.route('/upload_order', methods=['POST'])
+def upload_order():
+    print("api:upload_order")
+    if request.method == "POST":
+        proposed_id = verify_token(request.headers['Authorization'])
+        if proposed_id is None:
+            return jsonify(code=200, feedback='failure', msg="token expired or not login")
+        else:
+            order_handler = OrderHandler(database)
+            orders = order_handler.retrieve_user_orders(proposed_id)
+            print("upload order:",orders)
+            return jsonify(code=200, feedback='success', data=orders)
 
 
 if __name__ == '__main__':

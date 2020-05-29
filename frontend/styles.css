@@ -146,7 +146,7 @@ html,body{
 
 /* Tours */
 .tour-row{
-    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    /*border-bottom: 1px solid rgba(0, 0, 0, 1);*/
     padding-bottom: 10px;
     margin-top: 10px;
 }
@@ -167,11 +167,11 @@ html,body{
 
 .tour-status{
     font-weight: bolder;
-    width : 30%;
+    width : 25%;
 }
 
 .tour-piece-status{
-    width : 30%;
+    width : 25%;
 }
 
 .tour-price{
@@ -184,11 +184,11 @@ html,body{
 
 .tour-arena{
     font-weight: bolder;
-    width : 25%;
+    width : 30%;
 }
 
 .tour-piece-arena{
-    width : 25%;
+    width : 30%;
 }
 
 .tour-btn{
